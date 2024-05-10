@@ -31,6 +31,15 @@ export class Board{
 	}
 
 	AddShape(filePath){
+		let contents = readContents(filePath);
+		let size = parseXandY(contents);
+		let shape = [];
+
+		for(let i=0; i<this.rows; i++){
+			for(let j=0; j<this.cols; j++){
+			}	
+		}
+
 		this.matrix[1][3] = "X";
 		this.matrix[2][3] = "X";
 		this.matrix[3][3] = "X";
