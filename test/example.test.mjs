@@ -33,7 +33,7 @@ describe("Example test fixture", () => {
        .....`);
   })
 
-  test.skip("RLE string onto board", () => {
+  test("RLE string onto board", () => {
     let board = new Board(5,5);
     let filePath = "test/glider.rle.txt";
     board.AddShape(filePath);

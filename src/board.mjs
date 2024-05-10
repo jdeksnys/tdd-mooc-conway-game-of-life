@@ -29,4 +29,12 @@ export class Board{
 		}
 		return res;
 	}
+
+	AddShape(filePath){
+		this.matrix[1][3] = "X";
+		this.matrix[2][3] = "X";
+		this.matrix[3][3] = "X";
+		this.matrix[3][2] = "X";
+		this.matrix[2][1] = "X";
+	}
 }
