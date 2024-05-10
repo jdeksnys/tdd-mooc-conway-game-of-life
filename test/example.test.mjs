@@ -32,4 +32,14 @@ describe("Example test fixture", () => {
        .....
        .....`);
   })
+
+  test("RLE string onto board", () => {
+    let board = new Board(5,5);
+    expect(board.toString()).to.be.equalShape(
+      `.....
+       ...X.
+       .X.X.
+       ..XX.
+       .....`);
+  })
 });
