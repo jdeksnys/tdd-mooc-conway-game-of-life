@@ -44,3 +44,8 @@ export function parseXandY(contents){
     }
     return { "x": x, "y": y};
 }
+
+
+export function RleStrToArray(rle, x, y){
+    
+}

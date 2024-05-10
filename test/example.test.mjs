@@ -35,6 +35,8 @@ describe("Example test fixture", () => {
 
   test("RLE string onto board", () => {
     let board = new Board(5,5);
+    let shapePath = "test/glider.rle.txt";
+    board.AddShape(shapePath);
     expect(board.toString()).to.be.equalShape(
       `.....
        ...X.
