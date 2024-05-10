@@ -11,3 +11,8 @@ export function readContents(path) {
     let data = contents[n-1];
     return data;
 }
+
+
+export function parseXandY(contents){
+    return {"x": 3, "y": 3};
+}
