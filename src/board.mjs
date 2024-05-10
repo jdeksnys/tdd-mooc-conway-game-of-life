@@ -1,3 +1,5 @@
+import { parseXandY, readContents } from "./logic.mjs";
+
 export class Board{
 	rows;
 	cols;
@@ -21,7 +23,7 @@ export class Board{
 		for(let i=0; i<this.rows; i++){
 			let row = "";
 			for(let j=0; j<this.cols; j++){
-				row += ".";
+				row += this.matrix[i][j];
 			}
 			res += row + "\n";
 		}
