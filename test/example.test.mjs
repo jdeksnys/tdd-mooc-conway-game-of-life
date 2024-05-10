@@ -23,7 +23,7 @@ describe("Example test fixture", () => {
     expect(res["y"]).to.equal(3);
   })
 
-  test.skip("create empty board", () => {
+  test("create empty board", () => {
     let board = new Board(5,5);
     expect(board.toString()).to.be.equalShape(
       `.....
