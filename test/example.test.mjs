@@ -26,11 +26,11 @@ describe("Example test fixture", () => {
   test("create empty board", () => {
     let board = new Board(5,5);
     expect(board.toString()).to.be.equalShape(
-      `.....
-       .....
-       .....
-       .....
-       .....`);
+      `bbbbb
+       bbbbb
+       bbbbb
+       bbbbb
+       bbbbb`);
   })
 
   test("RLE string onto board", () => {
@@ -38,10 +38,10 @@ describe("Example test fixture", () => {
     let filePath = "test/glider.rle.txt";
     board.AddShape(filePath);
     expect(board.toString()).to.be.equalShape(
-      `.....
-       ...X.
-       .X.X.
-       ..XX.
-       .....`);
+      `bbbbb
+       bbbob
+       bobob
+       bboob
+       bbbbb`);
   })
 });

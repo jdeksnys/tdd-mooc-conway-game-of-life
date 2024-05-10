@@ -12,7 +12,7 @@ export class Board{
 		for(let i=0; i<this.rows; i++){
 			let row = [];
 			for(let j=0; j<this.cols; j++){
-				row.push(".");
+				row.push("b");
 			}
 			this.matrix.push(row);
 		}
@@ -39,12 +39,12 @@ export class Board{
 			}	
 		}
 
-		
 
-		this.matrix[1][3] = "X";
-		this.matrix[2][3] = "X";
-		this.matrix[3][3] = "X";
-		this.matrix[3][2] = "X";
-		this.matrix[2][1] = "X";
+
+		this.matrix[1][3] = "o";
+		this.matrix[2][3] = "o";
+		this.matrix[3][3] = "o";
+		this.matrix[3][2] = "o";
+		this.matrix[2][1] = "o";
 	}
 }
