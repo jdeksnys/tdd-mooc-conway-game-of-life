@@ -49,6 +49,9 @@ export function parseXandY(contents){
 export function RleStrToArray(rle, x, y){
     let shape = [];
     for(let i=0; i<rle.length; i++){
-        
+        let s = rle[i];
+        // $ - new line
+        // int n - repeat next char n times
+        // \n - new line
     }
 }
