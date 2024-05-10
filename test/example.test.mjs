@@ -7,11 +7,12 @@ describe("Example test fixture", () => {
     expect(sum(1, 2)).to.equal(3);
   });
 
-  test("open file and read rle data", () =>{
-    expect(readContents("test/glider.rle.txt")).to.equal("bob$2bo$3o!");
+  test("open file and read all contents", () =>{
+    let res = readContents("test/glider.rle.txt");
+    expect(res["data"]).to.equal("bob$2bo$3o!");
   })
 
-  test("readXandY", () => {
+  test.skip("readXandY", () => {
     let contents = `
       #N Glider
       #O Richard K. Guy

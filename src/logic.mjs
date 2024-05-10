@@ -8,8 +8,12 @@ export function readContents(path) {
     let contents = fs.readFileSync(path).toString().split("\n");
 
     let n = contents.length;
-    let data = contents[n-1];
-    return data;
+    let res = {
+        "name": contents[0],
+        "size": contents[n-2],
+        "data": contents[n-1]
+    }
+    return res;
 }
 
 
