@@ -1,0 +1,13 @@
+export class Board{
+	
+	
+	toString(){
+		let res = 
+`.....
+.....
+.....
+.....
+.....\n`;
+		return res;
+	}
+}
