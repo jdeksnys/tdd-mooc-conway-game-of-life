@@ -47,5 +47,8 @@ export function parseXandY(contents){
 
 
 export function RleStrToArray(rle, x, y){
-    
+    let shape = [];
+    for(let i=0; i<rle.length; i++){
+        
+    }
 }
