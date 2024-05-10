@@ -1,7 +1,6 @@
 import { describe, test } from "vitest";
 import { expect } from "chai";
-import { sum } from "../src/example.mjs";
-import { readContents } from "../src/app.mjs"
+import { readContents } from "../src/logic.mjs"
 
 describe("Example test fixture", () => {
   test.skip("Example test", () => {
