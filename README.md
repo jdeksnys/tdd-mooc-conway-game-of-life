@@ -1,6 +1,6 @@
-# New JavaScript Project
+# Conway's game of life
 
-An empty project with JavaScript testing tools preconfigured. Do whatever you like with it.
+Helsinki university Test-Driven Development exercise. Project template from: https://github.com/luontola/tdd-mooc-new-js-project
 
 ## Prerequisites
 
