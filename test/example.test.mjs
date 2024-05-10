@@ -8,8 +8,7 @@ describe("Example test fixture", () => {
     expect(sum(1, 2)).to.equal(3);
   });
 
-  // open file
   test("open file and read rle data", () =>{
-    expect(readContents("/Users/jonasdeksnys/Downloads/glider.rle.txt")).to.equal("bob$2bo$3o!");
+    expect(readContents("test/glider.rle.txt")).to.equal("bob$2bo$3o!");
   })
 });
