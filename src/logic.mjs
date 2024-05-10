@@ -1,3 +1,4 @@
+import { trim } from "lodash";
 
 
 export function readContents(path) {
@@ -18,5 +19,28 @@ export function readContents(path) {
 
 
 export function parseXandY(contents){
-    return {"x": 3, "y": 3};
+    let str = contents["size"];
+    str = trim(str);
+    let n = str.length;
+    let x;
+    let y;
+    let x_parsed = false;
+    let y_parsed = false;
+    
+    for(let i=0; i<n; i++){
+        if(str[i] == " "){
+            continue;
+        }
+        if(str[i]=="="){
+            if(!x_parsed){
+                x = parseInt(str[i+2]);
+                x_parsed = true;
+            } else if(!y_parsed){
+                y = parseInt(str[i+2]);
+                y_parsed = true;
+                break;
+            }
+        }
+    }
+    return { "x": x, "y": y};
 }
