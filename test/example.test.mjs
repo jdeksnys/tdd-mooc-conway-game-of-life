@@ -79,4 +79,13 @@ describe("Example test fixture", () => {
        boob
        bbbb`);
   })
+
+  test("RLE string onto board [block]", () => {
+    let board = new Board(2,2);
+    let filePath = "test/block.rle.txt";
+    board.AddShape(filePath);
+    expect(board.toString()).to.be.equalShape(
+      `oo
+       oo`);
+  })
 });
