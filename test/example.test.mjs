@@ -294,4 +294,10 @@ describe("Combine all logic", () => {
     let no = 1000;
     expect(CalculateResultPattern(path, no)).to.equal("2o$2o!");
   })
+
+  test("path+number -> path string", () => {
+    let path = "test/blinker.rle.txt";
+    let no = 1000;
+    expect(CalculateResultPattern(path, no)).to.equal("3o!");
+  })
 });
