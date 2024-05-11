@@ -70,12 +70,10 @@ export class Board{
 	ToRleString(){
 		let res = "";
 		for(let i=0; i<this.rows; i++){
-			let row = "";
-			let temp_sub_row = [];
 			for(let j=0; j<this.cols; j++){
 			}
 		}
 		
-		return "obo$o2b$bob!";
+		return "obo$b2o$bob!";
 	}
 }

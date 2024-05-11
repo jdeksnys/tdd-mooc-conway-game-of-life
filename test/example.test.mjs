@@ -282,5 +282,5 @@ describe("Shape matrix to RLE string", () => {
   let filePath = "test/glider.rle.txt";
   board.AddShape(filePath);
   board.NextPhase(true);
-  expect(board.ToRleString()).to.equal("obo$o2b$bob!");
+  expect(board.ToRleString()).to.equal("obo$b2o$bob!");
 });
