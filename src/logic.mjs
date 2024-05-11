@@ -134,6 +134,7 @@ function GetNoOfNeighbours(matrix, x, y){
 function TrimShape(matrix){
     let min_x = MinCoordX(matrix);
     let max_x = MaxCoordX(matrix);
+    let max_y = MaxCoordY(matrix);
     return matrix;
 }
 
@@ -154,6 +155,19 @@ function MaxCoordX(matrix){
     let res = 0;
     for(let i=0; i<matrix.length; i++){
         for(let j=matrix[0].length; j>=0; j--){
+            if(matrix[i][j] == "o"){
+                res = Math.max(res, j);
+                break;
+            }
+        }   
+    }
+    return res;
+}
+
+function MaxCoordY(matrix){
+    let res = 0;
+    for(let j=0; j<matrix[0].length; j++){
+        for(let i=matrix.length-1; i>=0; i--){
             if(matrix[i][j] == "o"){
                 res = Math.max(res, j);
                 break;
