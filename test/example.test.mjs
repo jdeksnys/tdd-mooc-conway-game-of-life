@@ -6,7 +6,7 @@ import { Board } from "../src/board.mjs";
 
 
 
-describe("Example test fixture", () => {
+describe("File import and parsing", () => {
   test.skip("Example test", () => {
     expect(sum(1, 2)).to.equal(3);
   });
@@ -88,7 +88,9 @@ describe("Example test fixture", () => {
       `oo
        oo`);
   })
+});
 
+describe("Shape phases", () => {
   test("1st shape pos [blinker]", () => {
     let board = new Board(5,5);
     let filePath = "test/blinker.rle.txt";
@@ -102,7 +104,7 @@ describe("Example test fixture", () => {
        bbbbb`);
   })
 
-  test("2nd shape pos [blinker]", () => {
+  test("2nd shape phase [blinker]", () => {
     let board = new Board(5,5);
     let filePath = "test/blinker.rle.txt";
     board.AddShape(filePath);
@@ -116,7 +118,7 @@ describe("Example test fixture", () => {
        bbbbb`);
   })
 
-  test("3rd shape pos [blinker]", () => {
+  test("3rd shape phase [blinker]", () => {
     let board = new Board(5,5);
     let filePath = "test/blinker.rle.txt";
     board.AddShape(filePath);
@@ -130,4 +132,18 @@ describe("Example test fixture", () => {
        bbobb
        bbbbb`);
   })
+
+  test("1st shape phase [blinker]", () => {
+    let board = new Board(5,5);
+    let filePath = "test/glider.rle.txt";
+    board.AddShape(filePath);
+    board.NextPhase();
+    expect(board.toString()).to.be.equalShape(
+      `bbbbb
+       bbbbb
+       bobob
+       bboob
+       bbobb`);
+  })
+
 });
