@@ -7,10 +7,6 @@ import { Board } from "../src/board.mjs";
 
 
 describe("File import and parsing", () => {
-  test("Example test", () => {
-    expect(sum(1, 2)).to.equal(3);
-  });
-
   test("open file and read all contents", () =>{
     let res = readContents("test/glider.rle.txt");
     expect(res["data"]).to.equal("bob$2bo$3o!");
@@ -107,7 +103,7 @@ describe("Shape phases", () => {
   })
 
   test("2nd shape phase [glider]", () => {
-    let board = new Board(5,5);
+    let board = new Board();
     let filePath = "test/glider.rle.txt";
     board.AddShape(filePath);
     board.NextPhase();
@@ -119,18 +115,16 @@ describe("Shape phases", () => {
   })
 
   test("3rd shape phase [glider]", () => {
-    let board = new Board(5,5);
+    let board = new Board();
     let filePath = "test/glider.rle.txt";
     board.AddShape(filePath);
     board.NextPhase();
     board.NextPhase();
     board.NextPhase();
     expect(board.toString()).to.be.equalShape(
-      `bbbbb
-       bbbbb
-       bbobb
-       bbboo
-       bboob`);
+      `obb
+       boo
+       oob`);
   })
 
   test("1st shape phase [block]", () => {
