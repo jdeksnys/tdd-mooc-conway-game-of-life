@@ -140,7 +140,7 @@ function TrimShape(matrix){
 function MinCoordX(matrix){
     let res = matrix[0].length-1;
     for(let i=0; i<matrix.length; i++){
-        for(let j=0; j<matrix.length; j++){
+        for(let j=0; j<matrix[0].length; j++){
             if(matrix[i][j] == "o"){
                 res = Math.min(res, j);
                 break;
@@ -153,7 +153,7 @@ function MinCoordX(matrix){
 function MaxCoordX(matrix){
     let res = 0;
     for(let i=0; i<matrix.length; i++){
-        for(let j=matrix.length; j>=0; j--){
+        for(let j=matrix[0].length; j>=0; j--){
             if(matrix[i][j] == "o"){
                 res = Math.max(res, j);
                 break;
