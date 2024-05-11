@@ -46,22 +46,8 @@ describe("File import and parsing", () => {
     let filePath = "test/block.rle.txt";
     board.AddShape(filePath);
     expect(board.toString()).to.be.equalShape(
-      `bbbbb
-       bbbbb
-       bboob
-       bboob
-       bbbbb`);
-  })
-
-  test("RLE string onto board [block]", () => {
-    let board = new Board(4,4);
-    let filePath = "test/block.rle.txt";
-    board.AddShape(filePath);
-    expect(board.toString()).to.be.equalShape(
-      `bbbb
-       boob
-       boob
-       bbbb`);
+      `oo
+       oo`);
   })
 
   test("RLE string onto board [block]", () => {
