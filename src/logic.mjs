@@ -108,6 +108,7 @@ export function NextPhase(matrix_og, trim_shape=false){
     }
     if(trim_shape){
         let test = [["b", "o", "b"], ["b", "o", "b"], ["b", "o", "b"]];
+        matrix = TrimShape(matrix);
         return test;
     }
     return matrix;
@@ -128,4 +129,8 @@ function GetNoOfNeighbours(matrix, x, y){
         }   
     }
     return res;
+}
+
+function TrimShape(matrix){
+    
 }
