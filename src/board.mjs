@@ -1,4 +1,4 @@
-import { parseXandY, readContents } from "./logic.mjs";
+import { parseXandY, readContents, RleStrToArray } from "./logic.mjs";
 
 export class Board{
 	rows;
@@ -33,14 +33,18 @@ export class Board{
 	AddShape(filePath){
 		let contents = readContents(filePath);
 		let size = parseXandY(contents);
-		let shape = [];
-		for(let i=0; i<this.rows; i++){
-			for(let j=0; j<this.cols; j++){
-			}	
-		}
+		let shape = RleStrToArray(contents["data"]);
+		console.log(shape);
+		this.OverlayShapeToBoard(shape);
 
+		// for(let i=0; i<this.rows; i++){
+		// 	for(let j=0; j<this.cols; j++){
+		// 	}	
+		// }
 
+	}
 
+	OverlayShapeToBoard(shape) {
 		this.matrix[1][3] = "o";
 		this.matrix[2][3] = "o";
 		this.matrix[3][3] = "o";

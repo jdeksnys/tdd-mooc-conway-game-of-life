@@ -48,10 +48,27 @@ export function parseXandY(contents){
 
 export function RleStrToArray(rle, x, y){
     let shape = [];
+    let row = [];
+    let n = 0;
+
     for(let i=0; i<rle.length; i++){
         let s = rle[i];
-        // $ - new line
-        // int n - repeat next char n times
-        // \n - new line
+        if(s == '$' || s == '!'){
+            shape.push(row);
+            row = [];
+            n = 0;
+        } else if(!parseInt(s)){
+            if(n <= 1){
+                row.push(s);
+            } else {
+                while(n > 0){
+                    n -= 1;
+                    row.push(s);
+                }
+            }
+        } else {
+            n = parseInt(s);
+        }
     }
+    return shape;
 }
