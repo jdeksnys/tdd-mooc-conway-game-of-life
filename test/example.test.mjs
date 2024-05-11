@@ -264,4 +264,15 @@ describe("Trim shape after phases change", () => {
        obo
        boo`);
   })
+
+  test("1st shape pos [block][trim]", () => {
+    let board = new Board(5,5);
+    let filePath = "test/block.rle.txt";
+    board.AddShape(filePath);
+    board.NextPhase(true);
+    board.NextPhase(true);
+    expect(board.toString()).to.be.equalShape(
+      `oo
+       oo`);
+  })
 });
