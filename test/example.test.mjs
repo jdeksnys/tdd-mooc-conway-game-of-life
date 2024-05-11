@@ -286,19 +286,19 @@ describe("Combine all logic", () => {
   test("path+number -> rle string", () => {
     let path = "test/glider.rle.txt";
     let no = 3;
-    expect(CalculateResultPattern(path, no)).to.equal("o2b$b2o$2ob!");
+    expect(CalculateResultPattern(path, no).ToRleString()).to.equal("o2b$b2o$2ob!");
   })
 
   test("path+number -> rle string", () => {
     let path = "test/block.rle.txt";
     let no = 1000;
-    expect(CalculateResultPattern(path, no)).to.equal("2o$2o!");
+    expect(CalculateResultPattern(path, no).ToRleString()).to.equal("2o$2o!");
   })
 
   test("path+number -> rle string", () => {
     let path = "test/blinker.rle.txt";
     let no = 1000;
-    expect(CalculateResultPattern(path, no)).to.equal("3o!");
+    expect(CalculateResultPattern(path, no).ToRleString()).to.equal("3o!");
   })
 
   test("path+number -> full rle result (rle+comments+size)", () => {
