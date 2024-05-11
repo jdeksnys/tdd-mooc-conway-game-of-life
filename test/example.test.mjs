@@ -57,15 +57,15 @@ describe("Example test fixture", () => {
        bbbbb`);
   })
 
-  test.skip("RLE string onto board [block]", () => {
+  test("RLE string onto board [block]", () => {
     let board = new Board(5,5);
     let filePath = "test/block.rle.txt";
     board.AddShape(filePath);
     expect(board.toString()).to.be.equalShape(
       `bbbbb
-       boobb
-       boobb
        bbbbb
+       bboob
+       bboob
        bbbbb`);
   })
 });
