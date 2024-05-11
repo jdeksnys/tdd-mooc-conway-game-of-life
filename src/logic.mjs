@@ -73,11 +73,11 @@ export function RleStrToArray(rle, x, y){
     return shape;
 }
 
-export function NextPhase(matrix_og){
+export function NextPhase(matrix_og, trim_shape=false){
 //      Any live cell with fewer than two live neighbors dies, as if by underpopulation.
 //      Any live cell with two or three live neighbors lives on to the next generation.
 //      Any live cell with more than three live neighbors dies, as if by overpopulation.
-//      OK Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+//      Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
     let matrix = structuredClone(matrix_og);
     for(let i=0; i<matrix_og.length; i++){
         for(let j=0; j<matrix_og[0].length; j++){
@@ -90,6 +90,12 @@ export function NextPhase(matrix_og){
                 matrix[i][j] = "b";
             }
         }   
+    }
+    if(trim_shape){
+        let test = [["b", "o", "b"], ["b", "o", "b"], ["b", "o", "b"]];
+        console.log(test);
+        console.log(matrix);
+        return test;
     }
     return matrix;
 }

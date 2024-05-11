@@ -217,3 +217,17 @@ describe("Shape phases", () => {
        bbbbb`);
   })
 });
+
+
+describe("Trim shape after phases change", () => {
+  test("1st shape pos [blinker]", () => {
+    let board = new Board(5,5);
+    let filePath = "test/blinker.rle.txt";
+    board.AddShape(filePath);
+    board.NextPhase(true);
+    expect(board.toString()).to.be.equalShape(
+      `bob
+       bob
+       bob`);
+  })
+});

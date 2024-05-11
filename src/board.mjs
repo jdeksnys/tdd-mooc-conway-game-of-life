@@ -59,7 +59,11 @@ export class Board{
 		}
 	}
 
-	NextPhase(){
-		this.matrix = NextPhase(this.matrix);
+	NextPhase(trim_shape=false){
+		this.matrix = NextPhase(this.matrix, trim_shape);
+		if(trim_shape){
+			this.cols = this.matrix[0].length;
+			this.rows = this.matrix.length;
+		}
 	}
 }
