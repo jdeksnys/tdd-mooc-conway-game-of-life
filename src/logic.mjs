@@ -79,6 +79,20 @@ export function NextPhase(matrix_og, trim_shape=false){
 //      Any live cell with more than three live neighbors dies, as if by overpopulation.
 //      Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
     let matrix = structuredClone(matrix_og);
+
+    if(trim_shape){
+        // add extra perimeter of "b" (in case shape grows)
+        for(let i=0; i<matrix_og.length; i++){
+            matrix_og[i].unshift("b");
+            matrix_og[i].push("b");
+        }
+
+        let temp = [];
+        for(let i=0; i<matrix_og[0].length+2; i++){
+            temp.push("b");
+        }
+    }
+
     for(let i=0; i<matrix_og.length; i++){
         for(let j=0; j<matrix_og[0].length; j++){
             let neighbours = GetNoOfNeighbours(matrix_og, j, i);
