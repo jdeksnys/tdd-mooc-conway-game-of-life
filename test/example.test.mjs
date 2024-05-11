@@ -33,7 +33,7 @@ describe("Example test fixture", () => {
        bbbbb`);
   })
 
-  test("RLE string onto board", () => {
+  test("RLE string onto board [glider]", () => {
     let board = new Board(5,5);
     let filePath = "test/glider.rle.txt";
     board.AddShape(filePath);
@@ -42,6 +42,30 @@ describe("Example test fixture", () => {
        bbobb
        bbbob
        booob
+       bbbbb`);
+  })
+
+  test("RLE string onto board [blinker]", () => {
+    let board = new Board(5,5);
+    let filePath = "test/blinker.rle.txt";
+    board.AddShape(filePath);
+    expect(board.toString()).to.be.equalShape(
+      `bbbbb
+       bbbbb
+       booob
+       bbbbb
+       bbbbb`);
+  })
+
+  test.skip("RLE string onto board [block]", () => {
+    let board = new Board(5,5);
+    let filePath = "test/block.rle.txt";
+    board.AddShape(filePath);
+    expect(board.toString()).to.be.equalShape(
+      `bbbbb
+       boobb
+       boobb
+       bbbbb
        bbbbb`);
   })
 });
