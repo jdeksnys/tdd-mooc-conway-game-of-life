@@ -133,17 +133,29 @@ function GetNoOfNeighbours(matrix, x, y){
 
 function TrimShape(matrix){
     let min_x = MinCoordX(matrix);
+    let max_x = MaxCoordX(matrix);
     return matrix;
 }
 
 function MinCoordX(matrix){
-    let res = matrix.length-1;
-    let row_checked = false;
-
+    let res = matrix[0].length-1;
     for(let i=0; i<matrix.length; i++){
         for(let j=0; j<matrix.length; j++){
             if(matrix[i][j] == "o"){
-                res = min(res, matrix[i][j]);
+                res = Math.min(res, j);
+                break;
+            }
+        }   
+    }
+    return res;
+}
+
+function MaxCoordX(matrix){
+    let res = 0;
+    for(let i=0; i<matrix.length; i++){
+        for(let j=matrix.length; j>=0; j--){
+            if(matrix[i][j] == "o"){
+                res = Math.max(res, j);
                 break;
             }
         }   
