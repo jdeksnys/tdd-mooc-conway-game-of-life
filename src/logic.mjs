@@ -77,14 +77,18 @@ export function NextPhase(matrix_og){
 //      Any live cell with fewer than two live neighbors dies, as if by underpopulation.
 //      Any live cell with two or three live neighbors lives on to the next generation.
 //      Any live cell with more than three live neighbors dies, as if by overpopulation.
-//      Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+//      OK Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
     let matrix = matrix_og;
 
     for(let i=0; i<matrix_og.length; i++){
         for(let j=0; j<matrix_og[0].length; j++){
             let neighbours = GetNoOfNeighbours(matrix_og);
             if(neighbours == 3){
-                matrix[i][j] = "o";
+                if(matrix_og[i][j] = "b"){
+                    matrix[i][j] = "o";
+                }
+            } else if(neighbours > 3 || neighbours < 2){
+                matrix[i][j] = "b";
             }
         }   
     }
@@ -99,5 +103,4 @@ export function NextPhase(matrix_og){
 }
 
 function GetNoOfNeighbours(matrix){
-
 }
