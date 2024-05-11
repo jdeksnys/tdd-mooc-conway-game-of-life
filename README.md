@@ -13,7 +13,9 @@ You'll need a recent [Node.js](https://nodejs.org/) version. Then download this 
 
 ## Running
 Usage:
-```node app.mjs <full_path> <no_of_generations>```
+```
+node app.mjs <full_path> <no_of_generations>
+```
 
 Outputs result in RLE format to stdout. Example:
 `node app.mjs ~/Desktop/glider.rle.txt 3`
