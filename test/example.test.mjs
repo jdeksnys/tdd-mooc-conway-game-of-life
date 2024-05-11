@@ -160,4 +160,18 @@ describe("Shape phases", () => {
        bboob`);
   })
 
+  test("3rd shape phase [glider]", () => {
+    let board = new Board(5,5);
+    let filePath = "test/glider.rle.txt";
+    board.AddShape(filePath);
+    board.NextPhase();
+    board.NextPhase();
+    board.NextPhase();
+    expect(board.toString()).to.be.equalShape(
+      `bbbbb
+       bbbbb
+       bbobb
+       bbboo
+       bboob`);
+  })
 });
