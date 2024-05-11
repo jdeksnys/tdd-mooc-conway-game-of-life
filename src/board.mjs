@@ -87,7 +87,7 @@ export class Board{
 				} else {
 					if(j==this.cols-1){
 						res += c==1 ? symbol : `${c}${symbol}`;
-						res += c==1 ? s : `${c}${s}`;
+						res += s;
 						symbol = s;
 					} else {
 						res += c==1 ? symbol : `${c}${symbol}`;
