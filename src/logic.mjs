@@ -106,7 +106,7 @@ export function NextPhase(matrix_og, trim_shape=false){
             }
         }   
     }
-    
+
     if(trim_shape){
         matrix = TrimShape(matrix);
         return matrix;

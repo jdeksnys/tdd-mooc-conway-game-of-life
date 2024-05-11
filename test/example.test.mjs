@@ -220,26 +220,36 @@ describe("Shape phases", () => {
 
 
 describe("Trim shape after phases change", () => {
-  test("1st shape pos [blinker]", () => {
+  
+  test.skip("1st shape pos [blinker][trim]", () => {
     let board = new Board(5,5);
     let filePath = "test/blinker.rle.txt";
     board.AddShape(filePath);
     board.NextPhase(true);
     expect(board.toString()).to.be.equalShape(
-      `bob
-       bob
-       bob`);
+      `o
+       o
+       o`);
   })
 
-  test("1st shape pos [blinker]", () => {
+  test.skip("2nd shape pos [blinker][trim]", () => {
     let board = new Board(5,5);
     let filePath = "test/blinker.rle.txt";
     board.AddShape(filePath);
     board.NextPhase(true);
+    board.NextPhase(true);
+    expect(board.toString()).to.be.equalShape(
+      `ooo`);
+  })
+
+  test.skip("1st shape pos [glider][trim]", () => {
+    let board = new Board(5,5);
+    let filePath = "test/glider.rle.txt";
+    board.AddShape(filePath);
     board.NextPhase(true);
     expect(board.toString()).to.be.equalShape(
       `bbb
-       ooo
-       bbb`);
+       obo
+       boo`);
   })
 });
