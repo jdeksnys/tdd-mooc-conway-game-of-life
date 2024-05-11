@@ -70,10 +70,37 @@ export class Board{
 	ToRleString(){
 		let res = "";
 		for(let i=0; i<this.rows; i++){
+			let symbol;
+			let c;
 			for(let j=0; j<this.cols; j++){
+				let s = this.matrix[i][j];
+				if(j==0){
+					symbol = s;
+					c = 1;
+					continue;
+				}
+				if(s == symbol){
+					c += 1;
+					if(j == this.cols-1){
+						res += c==1 ? s : `${c}${s}`;
+					}
+				} else {
+					if(j==this.cols-1){
+						res += c==1 ? symbol : `${c}${symbol}`;
+						res += c==1 ? s : `${c}${s}`;
+						symbol = s;
+					} else {
+						res += c==1 ? symbol : `${c}${symbol}`;
+						symbol = s;
+					}
+				}
+			}
+			if(i == this.rows-1){
+				res += "!";
+			} else{
+				res += "$";
 			}
 		}
-		
-		return "obo$b2o$bob!";
+		return res;
 	}
 }
