@@ -106,10 +106,10 @@ export function NextPhase(matrix_og, trim_shape=false){
             }
         }   
     }
+    
     if(trim_shape){
-        let test = [["b", "o", "b"], ["b", "o", "b"], ["b", "o", "b"]];
         matrix = TrimShape(matrix);
-        return test;
+        return matrix;
     }
     return matrix;
 }
