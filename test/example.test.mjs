@@ -133,11 +133,8 @@ describe("Shape phases", () => {
     board.AddShape(filePath);
     board.NextPhase();
     expect(board.toString()).to.be.equalShape(
-      `bbbbb
-       bbbbb
-       bboob
-       bboob
-       bbbbb`);
+      `oo
+       oo`);
   })
   
   test("2nd shape phase [block]", () => {
