@@ -174,4 +174,18 @@ describe("Shape phases", () => {
        bbboo
        bboob`);
   })
+
+  test("1st shape phase [block]", () => {
+    let board = new Board(5,5);
+    let filePath = "test/block.rle.txt";
+    board.AddShape(filePath);
+    board.NextPhase();
+    expect(board.toString()).to.be.equalShape(
+      `bbbbb
+       bbbbb
+       bboob
+       bboob
+       bbbbb`);
+  })
+  
 });
