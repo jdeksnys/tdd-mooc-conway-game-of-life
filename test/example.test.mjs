@@ -12,13 +12,19 @@ describe("File import and parsing", () => {
     expect(res["data"]).to.equal("bob$2bo$3o!");
   })
 
+  
   test("readXandY", () => {
     let contents = readContents("test/glider.rle.txt");
     let res = parseXandY(contents);
     expect(res["x"]).to.equal(3);
     expect(res["y"]).to.equal(3);
   })
-
+  
+  test("open file and read all contents [reshuffled]", () =>{
+    let res = readContents("test/glider_shuffled.rle.txt");
+    expect(res["data"]).to.equal("bob$2bo$3o!");
+  })
+  
   test("RLE string onto board [glider]", () => {
     let board = new Board();
     let filePath = "test/glider.rle.txt";
