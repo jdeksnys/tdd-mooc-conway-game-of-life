@@ -2,6 +2,7 @@ import { describe, test } from "vitest";
 import { expect, equalShape } from "chai";
 import { readContents, parseXandY } from "../src/logic.mjs"
 import { Board } from "../src/board.mjs";
+import { CalculateResultPattern } from "../src/app.mjs";
 
 
 
@@ -277,5 +278,14 @@ describe("Shape matrix to RLE string", () => {
     board.NextPhase(true);
     board.NextPhase(true);
     expect(board.ToRleString()).to.equal("2o$2o!");
+  })
+});
+
+
+describe("Combine all logic", () => {
+  test("path+number -> path string", () => {
+    let path = "test/glider.rle.txt";
+    let no = 3;
+    expect(CalculateResultPattern(path, no)).to.equal("o2b$b2o$2ob!");
   })
 });
