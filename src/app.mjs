@@ -1,4 +1,4 @@
-import { CalculateResultPattern } from "./logic.mjs";
+import { GenerateFullRle } from "./logic.mjs";
 import { fileURLToPath } from 'url';
 import process from 'process';
 
@@ -31,6 +31,6 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
 }
 
 
-export function CalculateResultPattern(filePath, no){
-    return CalculateResultPattern(filePath, no);
+export function GenerateFullRle(filePath, no){
+    return GenerateFullRle(filePath, no);
 }
