@@ -34,7 +34,6 @@ export class Board{
 		let contents = readContents(filePath);
 		let size = parseXandY(contents);
 		let shape = RleStrToArray(contents["data"]);
-		console.log(shape);
 		this.OverlayShapeToBoard(shape);
 	}
 
@@ -55,7 +54,7 @@ export class Board{
 		let y_start = board_centre_y - shape_centre_y;
 		for(let i=0; i<shape.length; i++){
 			for(let j=0; j<shape[0].length; j++){
-				this.matrix[x_start + i][y_start + j] = shape[i][j];
+				this.matrix[y_start + i][x_start + j] = shape[i][j];
 			}	
 		}
 	}
