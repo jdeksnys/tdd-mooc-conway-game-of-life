@@ -15,13 +15,14 @@ export function readContents(path) {
             continue;
         } else if(contents[i][0] == "x"){
             size = contents[i];
+        } else if(!data){
+            data = contents[i];
         }
     }
 
     let res = {
-        "name": contents[0],
         "size": size,
-        "data": contents[n-1]
+        "data": data
     }
     return res;
 }
