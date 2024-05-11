@@ -26,7 +26,11 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
         process.exit(1);
     }
     
-    console.log(`\t you entered: ${filePath} ${number}`);
+    try{
+        return GenerateFullRle(filePath, no);
+    } catch {
+        console.error("Error in parsing/calculating pattern.");
+    }
 } else {
 }
 
