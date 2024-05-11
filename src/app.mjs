@@ -10,13 +10,13 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     }
     
     let filePath;
-    let number;
+    let no;
     
     try{
         const args = process.argv.slice(2);
         filePath = args[0];
-        number = parseInt(args[1]);
-        if(args.length != 2 || !number){
+        no = parseInt(args[1]);
+        if(args.length != 2 || !no){
             PrintUsage();
             process.exit(1);
         }
@@ -27,7 +27,9 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     }
     
     try{
-        return GenerateFullRle(filePath, no);
+        let res = GenerateFullRleReponse(filePath, no);
+        console.log(res);
+        process.stdout.write(res);
     } catch {
         console.error("Error in parsing/calculating pattern.");
     }
@@ -35,6 +37,6 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
 }
 
 
-export function GenerateFullRle(filePath, no){
+export function GenerateFullRleReponse(filePath, no){
     return GenerateFullRle(filePath, no);
 }

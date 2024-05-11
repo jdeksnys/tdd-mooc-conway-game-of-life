@@ -1,10 +1,10 @@
 import { Board } from "./board.mjs";
+import fs from 'fs';
 
 export function readContents(path) {
     if(!path){
         return;
     }
-    const fs = require("fs");
     let contents = fs.readFileSync(path).toString().split("\n");
 
     let n = contents.length;
