@@ -1,6 +1,7 @@
 import { GenerateFullRle } from "./logic.mjs";
 import { fileURLToPath } from 'url';
 import process from 'process';
+import fs from 'fs';
 
 
 // differentiate cli app run and import run
@@ -28,7 +29,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     
     try{
         let res = GenerateFullRleReponse(filePath, no);
-        console.log(res);
+        // console.log(res);
         process.stdout.write(res);
     } catch {
         console.error("Error in parsing/calculating pattern.");
@@ -38,5 +39,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
 
 
 export function GenerateFullRleReponse(filePath, no){
+    if(!fs.existsSync(filePath)){
+        throw new Error("file not found");
+    }
     return GenerateFullRle(filePath, no);
 }
