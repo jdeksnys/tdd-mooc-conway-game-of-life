@@ -242,14 +242,14 @@ describe("Trim shape after phases change", () => {
       `ooo`);
   })
 
-  test.skip("1st shape pos [glider][trim]", () => {
+  test("1st shape pos [glider][trim]", () => {
     let board = new Board(5,5);
     let filePath = "test/glider.rle.txt";
     board.AddShape(filePath);
     board.NextPhase(true);
     expect(board.toString()).to.be.equalShape(
-      `bbb
-       obo
-       boo`);
+      `obo
+       boo
+       bob`);
   })
 });
