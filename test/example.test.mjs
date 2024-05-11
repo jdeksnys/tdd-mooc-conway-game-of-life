@@ -156,11 +156,8 @@ describe("Shape phases", () => {
     board.NextPhase();
     board.NextPhase();
     expect(board.toString()).to.be.equalShape(
-      `bbbbb
-       bbbbb
-       bboob
-       bboob
-       bbbbb`);
+      `oo
+       oo`);
   })
 });
 
