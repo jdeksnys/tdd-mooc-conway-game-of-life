@@ -23,16 +23,6 @@ describe("File import and parsing", () => {
     expect(res["y"]).to.equal(3);
   })
 
-  test("create empty board", () => {
-    let board = new Board(5,5);
-    expect(board.toString()).to.be.equalShape(
-      `bbbbb
-       bbbbb
-       bbbbb
-       bbbbb
-       bbbbb`);
-  })
-
   test("RLE string onto board [glider]", () => {
     let board = new Board(5,5);
     let filePath = "test/glider.rle.txt";

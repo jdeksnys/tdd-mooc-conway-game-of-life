@@ -6,16 +6,6 @@ export class Board{
 	matrix;
 
 	constructor(m, n){
-		this.rows = m;
-		this.cols = n;
-		this.matrix = [];
-		for(let i=0; i<this.rows; i++){
-			let row = [];
-			for(let j=0; j<this.cols; j++){
-				row.push("b");
-			}
-			this.matrix.push(row);
-		}
 	}
 	
 	toString(){
@@ -33,6 +23,7 @@ export class Board{
 	AddShape(filePath){
 		let contents = readContents(filePath);
 		let size = parseXandY(contents);
+		this.InitEmptyMatrix(size["y"], size["x"]);
 		let shape = RleStrToArray(contents["data"]);
 		this.OverlayShapeToBoard(shape);
 	}
@@ -102,5 +93,18 @@ export class Board{
 			}
 		}
 		return res;
+	}
+
+	InitEmptyMatrix(rows, cols){
+		this.rows = rows;
+		this.cols = cols;
+		this.matrix = [];
+		for(let i=0; i<this.rows; i++){
+			let row = [];
+			for(let j=0; j<this.cols; j++){
+				row.push("b");
+			}
+			this.matrix.push(row);
+		}
 	}
 }
