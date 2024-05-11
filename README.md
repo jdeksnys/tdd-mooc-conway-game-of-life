@@ -4,6 +4,11 @@
 
 ### Coding screen recording:
 
+Due to storage and upload limitations, split into several recordings. Youtube and Google Drive links:
+https://youtube.com/playlist?list=PLeoSOEigzwmGf_veQc1w51kVOsjPFxV9W&si=Y38AJl5iaaA_A0Cd
+https://photos.app.goo.gl/9P6HsBSNwt8uyhZc9
+
+
 
 ## Prerequisites
 
