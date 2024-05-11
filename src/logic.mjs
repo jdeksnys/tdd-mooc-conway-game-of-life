@@ -78,23 +78,22 @@ export function NextPhase(matrix_og, trim_shape=false){
 //      Any live cell with two or three live neighbors lives on to the next generation.
 //      Any live cell with more than three live neighbors dies, as if by overpopulation.
 //      Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
-    let matrix = structuredClone(matrix_og);
 
     if(trim_shape){
         // add extra perimeter of "b" (in case shape grows)
         for(let i=0; i<matrix_og.length; i++){
-            // matrix_og[i].unshift("b");
-            // matrix_og[i].push("b");
+            matrix_og[i].unshift("b");
+            matrix_og[i].push("b");
         }
-
         let temp = [];
-        for(let i=0; i<matrix_og[0].length+2; i++){
+        for(let i=0; i<matrix_og[0].length; i++){
             temp.push("b");
         }
-        // matrix_og.unshift(temp);
-        // matrix_og.push(temp);
+        matrix_og.unshift(temp);
+        matrix_og.push(temp);
     }
 
+    let matrix = structuredClone(matrix_og);
     for(let i=0; i<matrix_og.length; i++){
         for(let j=0; j<matrix_og[0].length; j++){
             let neighbours = GetNoOfNeighbours(matrix_og, j, i);
@@ -109,8 +108,6 @@ export function NextPhase(matrix_og, trim_shape=false){
     }
     if(trim_shape){
         let test = [["b", "o", "b"], ["b", "o", "b"], ["b", "o", "b"]];
-        console.log(test);
-        console.log(matrix);
         return test;
     }
     return matrix;
