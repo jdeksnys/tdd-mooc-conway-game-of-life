@@ -7,9 +7,20 @@ export function readContents(path) {
     let contents = fs.readFileSync(path).toString().split("\n");
 
     let n = contents.length;
+
+    let size;
+    let data
+    for(let i=0; i<contents.length; i++){
+        if(contents[i][0] == "#"){
+            continue;
+        } else if(contents[i][0] == "x"){
+            size = contents[i];
+        }
+    }
+
     let res = {
         "name": contents[0],
-        "size": contents[n-2],
+        "size": size,
         "data": contents[n-1]
     }
     return res;
