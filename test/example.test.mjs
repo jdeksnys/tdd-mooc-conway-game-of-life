@@ -24,15 +24,13 @@ describe("File import and parsing", () => {
   })
 
   test("RLE string onto board [glider]", () => {
-    let board = new Board(5,5);
+    let board = new Board();
     let filePath = "test/glider.rle.txt";
     board.AddShape(filePath);
     expect(board.toString()).to.be.equalShape(
-      `bbbbb
-       bbobb
-       bbbob
-       booob
-       bbbbb`);
+      `bob
+       bbo
+       ooo`);
   })
 
   test("RLE string onto board [blinker]", () => {
