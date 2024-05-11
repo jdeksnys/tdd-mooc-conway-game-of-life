@@ -93,7 +93,10 @@ export function NextPhase(matrix_og, trim_shape=false){
         matrix_og.push(temp);
     }
 
-    let matrix = structuredClone(matrix_og);
+    
+    // do not use structuredClone. False values in memory.
+    let matrix = JSON.parse(JSON.stringify(matrix_og))
+    
     for(let i=0; i<matrix_og.length; i++){
         for(let j=0; j<matrix_og[0].length; j++){
             let neighbours = GetNoOfNeighbours(matrix_og, j, i);
@@ -105,8 +108,7 @@ export function NextPhase(matrix_og, trim_shape=false){
                 matrix[i][j] = "b";
             }
         }   
-    }
-
+    }    
     if(trim_shape){
         matrix = TrimShape(matrix);
         return matrix;
@@ -118,8 +120,8 @@ function GetNoOfNeighbours(matrix, x, y){
     let max_x = matrix[0].length-1;
     let max_y = matrix.length-1;
     let res = 0;
-    for(let i=-1; i<2; i++){
-        for(let j=-1; j<2; j++){
+    for(let i=-1; i<=1; i++){
+        for(let j=-1; j<=1; j++){
             let x_ = x + j;
             let y_ = y + i;
             if((x_==x && y_==y) || x_<0 || x_>max_x || y_<0 || y_>max_y){
