@@ -72,21 +72,17 @@ describe("Shape phases", () => {
        o`);
   })
 
-  test.skip("2nd shape phase [blinker]", () => {
+  test("2nd shape phase [blinker]", () => {
     let board = new Board(5,5);
     let filePath = "test/blinker.rle.txt";
     board.AddShape(filePath);
     board.NextPhase();
     board.NextPhase();
     expect(board.toString()).to.be.equalShape(
-      `bbbbb
-       bbbbb
-       booob
-       bbbbb
-       bbbbb`);
+      `ooo`);
   })
 
-  test.skip("3rd shape phase [blinker]", () => {
+  test("3rd shape phase [blinker]", () => {
     let board = new Board(5,5);
     let filePath = "test/blinker.rle.txt";
     board.AddShape(filePath);
@@ -94,11 +90,9 @@ describe("Shape phases", () => {
     board.NextPhase();
     board.NextPhase();
     expect(board.toString()).to.be.equalShape(
-      `bbbbb
-       bbobb
-       bbobb
-       bbobb
-       bbbbb`);
+      `o
+       o
+       o`);
   })
 
   test.skip("1st shape phase [glider]", () => {
