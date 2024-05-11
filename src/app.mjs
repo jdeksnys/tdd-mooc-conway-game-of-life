@@ -1,4 +1,4 @@
-import { readContents } from "./logic.mjs";
+import { readContents, CalculateResultPattern } from "./logic.mjs";
 import { fileURLToPath } from 'url';
 import process from 'process';
 
@@ -32,7 +32,6 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
 }
 
 
-export function CalculateResultPattern(filePath, number){
-    let res = readContents(filePath);
-    return "o2b$b2o$2ob!";
+export function CalculateResultPattern(filePath, no){
+    return CalculateResultPattern(filePath, no);
 }

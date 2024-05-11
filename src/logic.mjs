@@ -195,3 +195,8 @@ function MaxCoordY(matrix){
     }
     return res;
 }
+
+
+export function CalculateResultPattern(path, no){
+    return "o2b$b2o$2ob!";   
+}
