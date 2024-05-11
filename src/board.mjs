@@ -1,4 +1,4 @@
-import { parseXandY, readContents, RleStrToArray } from "./logic.mjs";
+import { parseXandY, readContents, RleStrToArray, NextPhase } from "./logic.mjs";
 
 export class Board{
 	rows;
@@ -60,9 +60,6 @@ export class Board{
 	}
 
 	NextPhase(){
-		this.matrix[1][2] = "o";
-		this.matrix[3][2] = "o";
-		this.matrix[2][1] = "b";
-		this.matrix[2][3] = "b";
+		this.matrix = NextPhase(this.matrix);
 	}
 }

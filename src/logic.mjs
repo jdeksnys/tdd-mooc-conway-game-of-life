@@ -72,3 +72,11 @@ export function RleStrToArray(rle, x, y){
     }
     return shape;
 }
+
+export function NextPhase(matrix){
+    matrix[1][2] = "o";
+    matrix[3][2] = "o";
+    matrix[2][1] = "b";
+    matrix[2][3] = "b";
+    return matrix;
+}
