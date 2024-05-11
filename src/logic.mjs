@@ -132,10 +132,17 @@ function GetNoOfNeighbours(matrix, x, y){
 }
 
 function TrimShape(matrix){
+    // trim matrix to that only shape is left, without additional "b" beyond shape perimeter
     let min_x = MinCoordX(matrix);
     let max_x = MaxCoordX(matrix);
     let min_y = MinCoordY(matrix);
     let max_y = MaxCoordY(matrix);
+    let min_coord = Math.min(min_x, min_y);
+    let max_coord = Math.max(max_x, max_y);
+    matrix = matrix.slice(min_coord, max_coord+1);
+    for(let i=0; i<matrix.length; i++){
+        matrix[i] = matrix[i].slice(min_coord, max_coord+1);
+    }
     return matrix;
 }
 
@@ -157,7 +164,7 @@ function MinCoordY(matrix){
     for(let j=0; j<matrix[0].length; j++){
         for(let i=0; i<matrix.length; i++){
             if(matrix[i][j] == "o"){
-                res = Math.min(res, j);
+                res = Math.min(res, i);
                 break;
             }
         }   
@@ -183,7 +190,7 @@ function MaxCoordY(matrix){
     for(let j=0; j<matrix[0].length; j++){
         for(let i=matrix.length-1; i>=0; i--){
             if(matrix[i][j] == "o"){
-                res = Math.max(res, j);
+                res = Math.max(res, i);
                 break;
             }
         }   
