@@ -58,4 +58,11 @@ export class Board{
 			}	
 		}
 	}
+
+	NextPhase(){
+		this.matrix[1][2] = "o";
+		this.matrix[3][2] = "o";
+		this.matrix[2][1] = "b";
+		this.matrix[2][3] = "b";
+	}
 }

@@ -88,4 +88,17 @@ describe("Example test fixture", () => {
       `oo
        oo`);
   })
+
+  test("1st shape pos [blinker]", () => {
+    let board = new Board(5,5);
+    let filePath = "test/blinker.rle.txt";
+    board.AddShape(filePath);
+    board.NextPhase();
+    expect(board.toString()).to.be.equalShape(
+      `bbbbb
+       bbobb
+       bbobb
+       bbobb
+       bbbbb`);
+  })
 });
