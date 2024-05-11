@@ -275,3 +275,12 @@ describe("Trim shape after phases change", () => {
        oo`);
   })
 });
+
+
+describe("Shape matrix to RLE string", () => {
+  let board = new Board(5,5);
+  let filePath = "test/glider.rle.txt";
+  board.AddShape(filePath);
+  board.NextPhase(true);
+  expect(board.ToRleString()).to.equal("obo$o2b$bob!");
+});

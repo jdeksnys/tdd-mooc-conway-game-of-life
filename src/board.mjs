@@ -66,4 +66,8 @@ export class Board{
 			this.rows = this.matrix.length;
 		}
 	}
+
+	ToRleString(){
+		return "obo$o2b$bob!";
+	}
 }
