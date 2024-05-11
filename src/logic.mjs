@@ -1,4 +1,4 @@
-import { trim } from "lodash";
+import { min, trim } from "lodash";
 
 
 export function readContents(path) {
@@ -132,5 +132,21 @@ function GetNoOfNeighbours(matrix, x, y){
 }
 
 function TrimShape(matrix){
-    
+    let min_x = MinCoordX(matrix);
+    return matrix;
+}
+
+function MinCoordX(matrix){
+    let res = matrix.length-1;
+    let row_checked = false;
+
+    for(let i=0; i<matrix.length; i++){
+        for(let j=0; j<matrix.length; j++){
+            if(matrix[i][j] == "o"){
+                res = min(res, matrix[i][j]);
+                break;
+            }
+        }   
+    }
+    return res;
 }
