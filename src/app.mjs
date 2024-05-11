@@ -7,7 +7,7 @@ import fs from 'fs';
 // differentiate cli app run and import run
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
     function PrintUsage(){
-        console.error("\tUsage: node app.mjs <full_path> <number>");
+        console.error("Usage: node app.mjs <full_path> <number>");
     }
     
     let filePath;
@@ -29,10 +29,9 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     
     try{
         let res = GenerateFullRleReponse(filePath, no);
-        // console.log(res);
         process.stdout.write(res);
-    } catch {
-        console.error("Error in parsing/calculating pattern.");
+    } catch(err) {
+        console.error(err.message);
     }
 } else {
 }
