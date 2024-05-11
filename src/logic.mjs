@@ -74,6 +74,12 @@ export function RleStrToArray(rle, x, y){
 }
 
 export function NextPhase(matrix){
+    for(let i=0; i<matrix.length; i++){
+        for(let j=0; j<matrix[0].length; j++){
+        }   
+    }
+
+
     matrix[1][2] = "o";
     matrix[3][2] = "o";
     matrix[2][1] = "b";
