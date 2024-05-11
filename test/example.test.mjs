@@ -102,7 +102,7 @@ describe("Example test fixture", () => {
        bbbbb`);
   })
 
-  test("2st shape pos [blinker]", () => {
+  test("2nd shape pos [blinker]", () => {
     let board = new Board(5,5);
     let filePath = "test/blinker.rle.txt";
     board.AddShape(filePath);
@@ -113,6 +113,21 @@ describe("Example test fixture", () => {
        bbbbb
        booob
        bbbbb
+       bbbbb`);
+  })
+
+  test("3rd shape pos [blinker]", () => {
+    let board = new Board(5,5);
+    let filePath = "test/blinker.rle.txt";
+    board.AddShape(filePath);
+    board.NextPhase();
+    board.NextPhase();
+    board.NextPhase();
+    expect(board.toString()).to.be.equalShape(
+      `bbbbb
+       bbobb
+       bbobb
+       bbobb
        bbbbb`);
   })
 });
