@@ -18,7 +18,6 @@ export function readContents(path) {
 
 export function parseXandY(contents){
     let str = contents["size"];
-    str = trim(str);
     let n = str.length;
     let x;
     let y;
