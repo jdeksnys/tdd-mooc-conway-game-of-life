@@ -83,14 +83,16 @@ export function NextPhase(matrix_og, trim_shape=false){
     if(trim_shape){
         // add extra perimeter of "b" (in case shape grows)
         for(let i=0; i<matrix_og.length; i++){
-            matrix_og[i].unshift("b");
-            matrix_og[i].push("b");
+            // matrix_og[i].unshift("b");
+            // matrix_og[i].push("b");
         }
 
         let temp = [];
         for(let i=0; i<matrix_og[0].length+2; i++){
             temp.push("b");
         }
+        // matrix_og.unshift(temp);
+        // matrix_og.push(temp);
     }
 
     for(let i=0; i<matrix_og.length; i++){
