@@ -6,7 +6,7 @@ import process from 'process';
 // differentiate cli app run and import run
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
     function PrintUsage(){
-        console.error("\tUsage: node app.mjs <file_path> <number>");
+        console.error("\tUsage: node app.mjs <full_path> <number>");
     }
     
     let filePath;
