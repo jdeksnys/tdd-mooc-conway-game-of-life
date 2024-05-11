@@ -78,13 +78,12 @@ export function NextPhase(matrix_og){
 //      Any live cell with two or three live neighbors lives on to the next generation.
 //      Any live cell with more than three live neighbors dies, as if by overpopulation.
 //      OK Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
-    let matrix = matrix_og;
-
+    let matrix = structuredClone(matrix_og);
     for(let i=0; i<matrix_og.length; i++){
         for(let j=0; j<matrix_og[0].length; j++){
-            let neighbours = GetNoOfNeighbours(matrix_og, i, j);
+            let neighbours = GetNoOfNeighbours(matrix_og, j, i);
             if(neighbours == 3){
-                if(matrix_og[i][j] = "b"){
+                if(matrix_og[i][j] == "b"){
                     matrix[i][j] = "o";
                 }
             } else if(neighbours > 3 || neighbours < 2){
@@ -92,25 +91,22 @@ export function NextPhase(matrix_og){
             }
         }   
     }
-
-
-    matrix[1][2] = "o";
-    matrix[3][2] = "o";
-    matrix[2][1] = "b";
-    matrix[2][3] = "b";
-    
     return matrix;
 }
 
 function GetNoOfNeighbours(matrix, x, y){
-    // let max_i = matrix.length;
-    // let max_j = matrix[0].length;
-
-    for(let i=0; i<3; i++){
-        for(let j=0; j<3; j++){
-            if(i==1 && j==1){
+    let max_x = matrix[0].length-1;
+    let max_y = matrix.length-1;
+    let res = 0;
+    for(let i=-1; i<2; i++){
+        for(let j=-1; j<2; j++){
+            let x_ = x + j;
+            let y_ = y + i;
+            if((x_==x && y_==y) || x_<0 || x_>max_x || y_<0 || y_>max_y){
                 continue;
             }
+            res += (matrix[y_][x_]=="o" ? 1 : 0);
         }   
     }
+    return res;
 }
