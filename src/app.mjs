@@ -1,4 +1,4 @@
-import { readContents, CalculateResultPattern } from "./logic.mjs";
+import { CalculateResultPattern } from "./logic.mjs";
 import { fileURLToPath } from 'url';
 import process from 'process';
 
@@ -28,7 +28,6 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     
     console.log(`\t you entered: ${filePath} ${number}`);
 } else {
-    console.log('required as a module');
 }
 
 

@@ -1,3 +1,4 @@
+import { Board } from "./board.mjs";
 
 export function readContents(path) {
     if(!path){
@@ -198,5 +199,11 @@ function MaxCoordY(matrix){
 
 
 export function CalculateResultPattern(path, no){
-    return "o2b$b2o$2ob!";   
+    let contents = readContents(path, no);
+    let board = new Board();
+    board.AddShape(path);
+    for(let i=0; i<no; i++){
+        board.NextPhase();
+    }
+    return board.ToRleString();
 }
