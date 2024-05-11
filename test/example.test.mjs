@@ -34,15 +34,11 @@ describe("File import and parsing", () => {
   })
 
   test("RLE string onto board [blinker]", () => {
-    let board = new Board(5,5);
+    let board = new Board();
     let filePath = "test/blinker.rle.txt";
     board.AddShape(filePath);
     expect(board.toString()).to.be.equalShape(
-      `bbbbb
-       bbbbb
-       booob
-       bbbbb
-       bbbbb`);
+      `ooo`);
   })
 
   test("RLE string onto board [block]", () => {
