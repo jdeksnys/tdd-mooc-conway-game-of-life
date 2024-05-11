@@ -51,22 +51,12 @@ export class Board{
 		let shape_centre_y = shape.length % 2 == 0
 			? Math.floor(shape.length/2) - 1
 			: Math.floor(shape.length/2);
-
-		let shape_coord_x = board_centre_x - shape_centre_x;
-		let shape_coord_y = board_centre_y - shape_centre_y;
-		// console.log(shape_centre_x, shape_centre_y);
-
-
+		let x_start = board_centre_x - shape_centre_x;
+		let y_start = board_centre_y - shape_centre_y;
 		for(let i=0; i<shape.length; i++){
 			for(let j=0; j<shape[0].length; j++){
-				// console.log(shape[i][j]);
+				this.matrix[x_start + i][y_start + j] = shape[i][j];
 			}	
 		}
-
-		this.matrix[1][3] = "o";
-		this.matrix[2][3] = "o";
-		this.matrix[3][3] = "o";
-		this.matrix[3][2] = "o";
-		this.matrix[2][1] = "o";
 	}
 }

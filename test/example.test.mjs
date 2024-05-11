@@ -39,9 +39,9 @@ describe("Example test fixture", () => {
     board.AddShape(filePath);
     expect(board.toString()).to.be.equalShape(
       `bbbbb
+       bbobb
        bbbob
-       bobob
-       bboob
+       booob
        bbbbb`);
   })
 });
