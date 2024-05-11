@@ -73,9 +73,19 @@ export function RleStrToArray(rle, x, y){
     return shape;
 }
 
-export function NextPhase(matrix){
-    for(let i=0; i<matrix.length; i++){
-        for(let j=0; j<matrix[0].length; j++){
+export function NextPhase(matrix_og){
+//      Any live cell with fewer than two live neighbors dies, as if by underpopulation.
+//      Any live cell with two or three live neighbors lives on to the next generation.
+//      Any live cell with more than three live neighbors dies, as if by overpopulation.
+//      Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+    let matrix = matrix_og;
+
+    for(let i=0; i<matrix_og.length; i++){
+        for(let j=0; j<matrix_og[0].length; j++){
+            let neighbours = GetNoOfNeighbours(matrix_og);
+            if(neighbours == 3){
+                matrix[i][j] = "o";
+            }
         }   
     }
 
@@ -84,5 +94,10 @@ export function NextPhase(matrix){
     matrix[3][2] = "o";
     matrix[2][1] = "b";
     matrix[2][3] = "b";
+    
     return matrix;
+}
+
+function GetNoOfNeighbours(matrix){
+
 }
