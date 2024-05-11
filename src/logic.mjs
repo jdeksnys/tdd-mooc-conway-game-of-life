@@ -1,5 +1,3 @@
-import { min, trim } from "lodash";
-
 
 export function readContents(path) {
     if(!path){
@@ -73,26 +71,18 @@ export function RleStrToArray(rle, x, y){
     return shape;
 }
 
-export function NextPhase(matrix_og, trim_shape=false){
-//      Any live cell with fewer than two live neighbors dies, as if by underpopulation.
-//      Any live cell with two or three live neighbors lives on to the next generation.
-//      Any live cell with more than three live neighbors dies, as if by overpopulation.
-//      Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
-
-    if(trim_shape){
-        // add extra perimeter of "b" (in case shape grows)
-        for(let i=0; i<matrix_og.length; i++){
-            matrix_og[i].unshift("b");
-            matrix_og[i].push("b");
-        }
-        let temp = [];
-        for(let i=0; i<matrix_og[0].length; i++){
-            temp.push("b");
-        }
-        matrix_og.unshift(temp);
-        matrix_og.push(temp);
+export function NextPhase(matrix_og){
+    // add extra perimeter of "b" (in case shape grows)
+    for(let i=0; i<matrix_og.length; i++){
+        matrix_og[i].unshift("b");
+        matrix_og[i].push("b");
     }
-
+    let temp = [];
+    for(let i=0; i<matrix_og[0].length; i++){
+        temp.push("b");
+    }
+    matrix_og.unshift(temp);
+    matrix_og.push(temp);
     
     // do not use structuredClone. False values in memory.
     let matrix = JSON.parse(JSON.stringify(matrix_og))
@@ -109,10 +99,7 @@ export function NextPhase(matrix_og, trim_shape=false){
             }
         }   
     }    
-    if(trim_shape){
-        matrix = TrimShape(matrix);
-        return matrix;
-    }
+    matrix = TrimShape(matrix);
     return matrix;
 }
 

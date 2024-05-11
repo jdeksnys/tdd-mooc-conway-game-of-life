@@ -5,7 +5,7 @@ export class Board{
 	cols;
 	matrix;
 
-	constructor(m, n){
+	constructor(){
 	}
 	
 	toString(){
@@ -50,12 +50,10 @@ export class Board{
 		}
 	}
 
-	NextPhase(trim_shape=true){
-		this.matrix = NextPhase(this.matrix, trim_shape);
-		if(trim_shape){
-			this.cols = this.matrix[0].length;
-			this.rows = this.matrix.length;
-		}
+	NextPhase(){
+		this.matrix = NextPhase(this.matrix);
+		this.cols = this.matrix[0].length;
+		this.rows = this.matrix.length;
 	}
 
 	ToRleString(){
