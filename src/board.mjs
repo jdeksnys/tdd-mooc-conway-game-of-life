@@ -50,7 +50,7 @@ export class Board{
 		}
 	}
 
-	NextPhase(trim_shape=false){
+	NextPhase(trim_shape=true){
 		this.matrix = NextPhase(this.matrix, trim_shape);
 		if(trim_shape){
 			this.cols = this.matrix[0].length;

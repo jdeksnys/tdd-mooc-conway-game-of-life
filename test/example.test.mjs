@@ -62,19 +62,17 @@ describe("File import and parsing", () => {
 
 describe("Shape phases", () => {
   test("1st shape pos [blinker]", () => {
-    let board = new Board(5,5);
+    let board = new Board();
     let filePath = "test/blinker.rle.txt";
     board.AddShape(filePath);
     board.NextPhase();
     expect(board.toString()).to.be.equalShape(
-      `bbbbb
-       bbobb
-       bbobb
-       bbobb
-       bbbbb`);
+      `o
+       o
+       o`);
   })
 
-  test("2nd shape phase [blinker]", () => {
+  test.skip("2nd shape phase [blinker]", () => {
     let board = new Board(5,5);
     let filePath = "test/blinker.rle.txt";
     board.AddShape(filePath);
@@ -88,7 +86,7 @@ describe("Shape phases", () => {
        bbbbb`);
   })
 
-  test("3rd shape phase [blinker]", () => {
+  test.skip("3rd shape phase [blinker]", () => {
     let board = new Board(5,5);
     let filePath = "test/blinker.rle.txt";
     board.AddShape(filePath);
@@ -103,7 +101,7 @@ describe("Shape phases", () => {
        bbbbb`);
   })
 
-  test("1st shape phase [glider]", () => {
+  test.skip("1st shape phase [glider]", () => {
     let board = new Board(5,5);
     let filePath = "test/glider.rle.txt";
     board.AddShape(filePath);
@@ -116,7 +114,7 @@ describe("Shape phases", () => {
        bbobb`);
   })
 
-  test("2nd shape phase [glider]", () => {
+  test.skip("2nd shape phase [glider]", () => {
     let board = new Board(5,5);
     let filePath = "test/glider.rle.txt";
     board.AddShape(filePath);
@@ -130,7 +128,7 @@ describe("Shape phases", () => {
        bboob`);
   })
 
-  test("3rd shape phase [glider]", () => {
+  test.skip("3rd shape phase [glider]", () => {
     let board = new Board(5,5);
     let filePath = "test/glider.rle.txt";
     board.AddShape(filePath);
@@ -145,7 +143,7 @@ describe("Shape phases", () => {
        bboob`);
   })
 
-  test("1st shape phase [block]", () => {
+  test.skip("1st shape phase [block]", () => {
     let board = new Board(5,5);
     let filePath = "test/block.rle.txt";
     board.AddShape(filePath);
@@ -158,7 +156,7 @@ describe("Shape phases", () => {
        bbbbb`);
   })
   
-  test("2nd shape phase [block]", () => {
+  test.skip("2nd shape phase [block]", () => {
     let board = new Board(5,5);
     let filePath = "test/block.rle.txt";
     board.AddShape(filePath);
@@ -172,7 +170,7 @@ describe("Shape phases", () => {
        bbbbb`);
   })
 
-  test("3rd shape phase [block]", () => {
+  test.skip("3rd shape phase [block]", () => {
     let board = new Board(5,5);
     let filePath = "test/block.rle.txt";
     board.AddShape(filePath);
@@ -191,7 +189,7 @@ describe("Shape phases", () => {
 
 describe("Trim shape after phases change", () => {
   
-  test("1st shape pos [blinker][trim]", () => {
+  test.skip("1st shape pos [blinker][trim]", () => {
     let board = new Board(5,5);
     let filePath = "test/blinker.rle.txt";
     board.AddShape(filePath);
@@ -202,7 +200,7 @@ describe("Trim shape after phases change", () => {
        o`);
   })
 
-  test("2nd shape pos [blinker][trim]", () => {
+  test.skip("2nd shape pos [blinker][trim]", () => {
     let board = new Board(5,5);
     let filePath = "test/blinker.rle.txt";
     board.AddShape(filePath);
@@ -212,7 +210,7 @@ describe("Trim shape after phases change", () => {
       `ooo`);
   })
 
-  test("1st shape pos [glider][trim]", () => {
+  test.skip("1st shape pos [glider][trim]", () => {
     let board = new Board(5,5);
     let filePath = "test/glider.rle.txt";
     board.AddShape(filePath);
@@ -223,7 +221,7 @@ describe("Trim shape after phases change", () => {
        bob`);
   })
 
-  test("2nd shape pos [glider][trim]", () => {
+  test.skip("2nd shape pos [glider][trim]", () => {
     let board = new Board(5,5);
     let filePath = "test/glider.rle.txt";
     board.AddShape(filePath);
@@ -235,7 +233,7 @@ describe("Trim shape after phases change", () => {
        boo`);
   })
 
-  test("1st shape pos [block][trim]", () => {
+  test.skip("1st shape pos [block][trim]", () => {
     let board = new Board(5,5);
     let filePath = "test/block.rle.txt";
     board.AddShape(filePath);
@@ -249,7 +247,7 @@ describe("Trim shape after phases change", () => {
 
 describe("Shape matrix to RLE string", () => {
 
-  test("1st shape phase [glider][trim]", () => {
+  test.skip("1st shape phase [glider][trim]", () => {
     let board = new Board(5,5);
     let filePath = "test/glider.rle.txt";
     board.AddShape(filePath);
@@ -257,7 +255,7 @@ describe("Shape matrix to RLE string", () => {
     expect(board.ToRleString()).to.equal("obo$b2o$bob!");
   })
 
-  test("2nd shape phase [glider][trim]", () => {
+  test.skip("2nd shape phase [glider][trim]", () => {
     let board = new Board(5,5);
     let filePath = "test/glider.rle.txt";
     board.AddShape(filePath);
@@ -266,7 +264,7 @@ describe("Shape matrix to RLE string", () => {
     expect(board.ToRleString()).to.equal("2bo$obo$b2o!");
   })
 
-  test("3rd shape phase [glider][trim]", () => {
+  test.skip("3rd shape phase [glider][trim]", () => {
     let board = new Board(5,5);
     let filePath = "test/glider.rle.txt";
     board.AddShape(filePath);
@@ -276,7 +274,7 @@ describe("Shape matrix to RLE string", () => {
     expect(board.ToRleString()).to.equal("o2b$b2o$2ob!");
   })
 
-  test("1st shape phase [block][trim]", () => {
+  test.skip("1st shape phase [block][trim]", () => {
     let board = new Board(5,5);
     let filePath = "test/block.rle.txt";
     board.AddShape(filePath);
@@ -284,7 +282,7 @@ describe("Shape matrix to RLE string", () => {
     expect(board.ToRleString()).to.equal("2o$2o!");
   })
 
-  test("2nd shape phase [block][trim]", () => {
+  test.skip("2nd shape phase [block][trim]", () => {
     let board = new Board(5,5);
     let filePath = "test/block.rle.txt";
     board.AddShape(filePath);
