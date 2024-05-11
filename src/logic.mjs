@@ -137,11 +137,9 @@ function TrimShape(matrix){
     let max_x = MaxCoordX(matrix);
     let min_y = MinCoordY(matrix);
     let max_y = MaxCoordY(matrix);
-    let min_coord = Math.min(min_x, min_y);
-    let max_coord = Math.max(max_x, max_y);
-    matrix = matrix.slice(min_coord, max_coord+1);
+    matrix = matrix.slice(min_y, max_y+1);
     for(let i=0; i<matrix.length; i++){
-        matrix[i] = matrix[i].slice(min_coord, max_coord+1);
+        matrix[i] = matrix[i].slice(min_x, max_x+1);
     }
     return matrix;
 }

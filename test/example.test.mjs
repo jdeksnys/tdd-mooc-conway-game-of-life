@@ -221,7 +221,7 @@ describe("Shape phases", () => {
 
 describe("Trim shape after phases change", () => {
   
-  test.skip("1st shape pos [blinker][trim]", () => {
+  test("1st shape pos [blinker][trim]", () => {
     let board = new Board(5,5);
     let filePath = "test/blinker.rle.txt";
     board.AddShape(filePath);
