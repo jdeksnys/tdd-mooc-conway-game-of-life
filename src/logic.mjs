@@ -82,7 +82,7 @@ export function NextPhase(matrix_og){
 
     for(let i=0; i<matrix_og.length; i++){
         for(let j=0; j<matrix_og[0].length; j++){
-            let neighbours = GetNoOfNeighbours(matrix_og);
+            let neighbours = GetNoOfNeighbours(matrix_og, i, j);
             if(neighbours == 3){
                 if(matrix_og[i][j] = "b"){
                     matrix[i][j] = "o";
@@ -102,5 +102,15 @@ export function NextPhase(matrix_og){
     return matrix;
 }
 
-function GetNoOfNeighbours(matrix){
+function GetNoOfNeighbours(matrix, x, y){
+    // let max_i = matrix.length;
+    // let max_j = matrix[0].length;
+
+    for(let i=0; i<3; i++){
+        for(let j=0; j<3; j++){
+            if(i==1 && j==1){
+                continue;
+            }
+        }   
+    }
 }
